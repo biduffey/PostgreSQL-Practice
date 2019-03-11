@@ -31,15 +31,4 @@ order by  1 ,extract('month' from starttime )
 
 ----------------------------------
 -- Find the total number of members who have made at least one booking.
-
-
-select  facid
-      , extract('month' from starttime )
-      , sum(slots)
-from cd.bookings
-where --extract('month' from starttime ) = 9 and
- extract('year' from starttime ) = 2012
-group by  facid
-          , extract('month' from starttime )
-order by  1
-        , extract('month' from starttime )
+select count(distinct memid) from cd.bookings
