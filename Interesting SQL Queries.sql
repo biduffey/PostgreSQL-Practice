@@ -7,9 +7,6 @@ from cd.members mem
 group by 1,2
 order by 1
 
----------------------------
-
-
 ----------------------------------
 -- Output the facility id that has the highest number of slots booked without using a LIMIT clause. This version will probably look messy!
 
@@ -23,4 +20,3 @@ from cd.bookings b
 group by f.facid )
 
 select facid,  slots from total_slots where slots = (select max(slots) from total_slots)
----------------------------
