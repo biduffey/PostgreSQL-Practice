@@ -42,3 +42,39 @@ from cd.bookings b
 	and extract('year' from starttime) = 2012
 group by rollup(f.facid,month)
 order by 1,2
+
+
+----------------------------------
+-- Min/Max
+-- Min/Max are just shortcut windows functions where rank/row_number = 1
+----------------------------------
+
+
+-- The two queries below are equivalent:
+
+-- a)
+select m.surname
+		, m.firstname
+		, m.memid
+		,min (starttime  ) as starttime
+from cd.members m
+join   cd.bookings b
+on b.memid = m.memid
+and date (starttime) >=  '2012-09-01'
+group by 1,2,3
+order by m.memid
+
+-- b)
+select m.surname
+		, m.firstname
+		, m.memid
+		,starttime
+from cd.members m
+join (select *
+	  	, row_number() over (partition by memid order by starttime ) as rank
+	  from cd.bookings
+  where date (starttime) >=  '2012-09-01' ) as b
+on b.memid = m.memid
+
+and   rank = 1
+order by m.memid
