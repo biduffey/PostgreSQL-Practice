@@ -1,1 +1,1 @@
-# Random cod snippets that are useful to ben from time to time
+# A hodge-podge of miscellaneous notes and snippets that ben often needs but always forgets
