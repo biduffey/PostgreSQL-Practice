@@ -1,0 +1,12 @@
+select  to_date(BOOKING_TIMESTAMP) as date
+        , to_time(BOOKING_TIMESTAMP) as time
+        , MKTG_ADGROUP_SK as mktg_adgroup_sk
+        , MKTG_CAMPAIGN_SK as mktg_campaign_sk
+        , MKTG_CHANNEL_SK as mktg_channel_sk
+        , MKTG_CREATIVE_SK as mktg_creative_sk
+        , MKTG_KEYWORD_SK as mktg_keyword_sk
+        , MKTG_NETWORK_SK as mktg_network_sk
+        , MKTG_TOUCHPOINT_SK  as mktg_touchpoint_sk
+from booking_attribution_fact
+where to_date(BOOKING_TIMESTAMP) = '2019-03-26'
+asdfsdf
