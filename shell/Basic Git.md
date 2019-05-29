@@ -72,6 +72,27 @@ Git HUB integration!
   * The is really just used to experiment, or make a non-commital change, by making the change to a copy - instead of the real deal.
   * To fork a repo, type *git clone https://github.com/biduffey/<<nameofrepyouwanttoclone.git>> nameofnewfolder*
 
+## Useful commands
+git remote set-url origin git@github.com:biduffey/snips.git
+
+
+to create new branch
+get chackout -b branch_name
+
+to switch back to master
+get chackout master
+
+git commit -m 'message'
+
+git diff
+
+git status
+
+
+git branch
+
+
+
 
 ## Resources
   * Super helpful website: http://readwrite.com/2013/10/02/github-for-beginners-part-2
