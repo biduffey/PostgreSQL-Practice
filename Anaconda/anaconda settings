@@ -1,5 +1,0 @@
--- Add anaconda to path (mac os)
-
-export PATH="/anaconda3/bin:$PATH"
-
-note all mac paths begin with "/"  (unlike in windows!)
